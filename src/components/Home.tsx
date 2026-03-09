@@ -82,7 +82,7 @@ const Home: React.FC = () => {
               className="relative z-10 w-[90%] h-[98%] rounded-full overflow-hidden border-[6px] border-white dark:border-slate-800 shadow-2xl"
             >
               <img
-                src="dist\assets\Profil.jpg"
+                src="dist\assets\SPORTY.png"
                 alt="mariel Portrait"
                 className="w-full h-full object-contain bg-slate-100"
                 referrerPolicy="no-referrer"
