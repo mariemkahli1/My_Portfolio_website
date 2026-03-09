@@ -82,8 +82,8 @@ const Home: React.FC = () => {
               className="relative z-10 w-[90%] h-[98%] rounded-full overflow-hidden border-[6px] border-white dark:border-slate-800 shadow-2xl"
             >
               <img
-                src="src\assets\2773dd72-6213-4862-8bd2-2bd8f0899da8.jpg"
-                alt="OualiCode Portrait"
+                src="public\assets\Profil.jpg"
+                alt="mariel Portrait"
                 className="w-full h-full object-contain bg-slate-100"
                 referrerPolicy="no-referrer"
               />
