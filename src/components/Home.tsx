@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Github, Twitter, Download, Mail } from 'lucide-react';
-import profil from '../assets/profil.jpg';
+import profil from '../assets/Mariem2.jpg';
 
 const Home: React.FC = () => {
   const socialLinks = [
