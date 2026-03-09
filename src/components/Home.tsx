@@ -34,8 +34,16 @@ const Home: React.FC = () => {
 
       <div className="flex flex-wrap items-center gap-6">
          
-            <a 
-  href="/Mariem_Kahli_CV.pdf" 
+            {/* <a 
+  href="\Mariem_Kahli_CV.pdf" 
+  download="Mariem_Kahli_CV.pdf" 
+  className="flex items-center space-x-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all shadow-lg shadow-primary/20"
+>
+  <Download size={20} />
+  <span>Download CV</span>
+</a> */}
+<a 
+  href="/Mariem_Kahli_CV.pdf"  /* Chemin correct vers le dossier public */
   download="Mariem_Kahli_CV.pdf" 
   className="flex items-center space-x-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all shadow-lg shadow-primary/20"
 >
