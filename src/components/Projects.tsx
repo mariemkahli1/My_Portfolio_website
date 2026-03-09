@@ -4,34 +4,44 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
+     {
+      title: 'Solution De Gestion et Analyse des Workflows Power Automate',
+      description: 'An intelligent solution for managing and analyzing Power Automate workflows, integrating AI for automatic error detection and correction.',
+      image: 'src/assets/Authentification.png',
+      tags: ['React', 'TypeScript', '.NET', 'SQL Server' , 'SSMS' , 'power automate', 'python'],
+      github: 'https://github.com/mariemkahli1/Gestion_des_WKFs_power_automate_Backend',
+
+    },
+ 
     {
-      title: 'E-Commerce Platform',
+      title: 'After-Sales Service Management Web Application ',
+      description: 'A web application designed to manage after-sales services.',
+      image: 'src/assets/E-commerce.png',
+      tags: ['Angular','.NET' ],
+      github: 'https://github.com/mariemkahli1/ProjetSAV-.NET-Angular',
+     
+    },
+   
+     {
+      title: 'Dynamic Library Information System Website',
+      description: 'A dynamic platform that allows efficient management of books and members.',
+      image: 'src/assets/library.png',
+      tags: ['Angular','Spring Boot'],
+      github: 'https://github.com/mariemkahli1/Projet-Gestion-Laboratoire',
+
+    },
+       {
+      title: 'SPORTY Platform',
       description: 'A full-featured online store with payment integration and admin dashboard.',
-      image: 'https://picsum.photos/seed/project1/800/600',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'AI Image Generator',
-      description: 'Using Gemini API to generate creative images from text prompts.',
-      image: 'https://picsum.photos/seed/project2/800/600',
-      tags: ['React', 'Gemini API', 'Tailwind'],
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio with light and dark mode support.',
-      image: 'https://picsum.photos/seed/project3/800/600',
-      tags: ['React', 'Framer Motion', 'Tailwind'],
-      github: '#',
-      demo: '#',
+      image: '/src/assets/SPORTY.png',
+      tags: ['PHP', 'JAVASCRIPT', 'MYSQL '],
+      github: 'https://github.com/mariemkahli1/SPORTYWEBSITE-with-PHP',
+      
     },
   ];
 
   return (
-    <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section id="projects" className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Featured <span className="text-primary">Projects</span></h2>
@@ -48,7 +58,7 @@ const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg border border-black/5 dark:border-white/10 hover:shadow-2xl transition-all"
+              className="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg border border-black/5 dark:border-white/10 hover:shadow-2xl transition-all duration-300"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -61,9 +71,7 @@ const Projects: React.FC = () => {
                   <a href={project.github} className="p-3 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors">
                     <Github size={20} />
                   </a>
-                  <a href={project.demo} className="p-3 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors">
-                    <ExternalLink size={20} />
-                  </a>
+                
                 </div>
               </div>
               

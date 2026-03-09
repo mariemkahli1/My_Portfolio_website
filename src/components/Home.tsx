@@ -32,10 +32,7 @@ const Home: React.FC = () => {
           </p>
 
       <div className="flex flex-wrap items-center gap-6">
-            {/* <button className="flex items-center space-x-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all shadow-lg shadow-primary/20">
-              <Download size={20} />
-              <span>Download CV</span>
-            </button> */}
+         
             <a 
   href="/Mariem_Kahli_CV.pdf" 
   download="Mariem_Kahli_CV.pdf" 

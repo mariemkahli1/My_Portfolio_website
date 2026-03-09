@@ -5,11 +5,17 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
   
-  --color-primary: #F27D26;
-  --color-primary-dark: #D66A1E;
+  --color-primary: #f97316;
+  --color-primary-dark: #ea580c;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #0F172A;
+    color: #F8FAFC;
+    @apply transition-colors duration-300;
+  }
   body {
     @apply font-sans transition-colors duration-300;
   }
@@ -22,9 +28,4 @@
 .dark {
   background-color: #0F172A;
   color: #F8FAFC;
-}
-
-.light {
-  background-color: #FFFFFF;
-  color: #1E293B;
 }

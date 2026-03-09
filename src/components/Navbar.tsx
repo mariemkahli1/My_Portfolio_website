@@ -35,13 +35,13 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <button
+          {/* <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
             aria-label="Toggle Theme"
           >
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-          </button>
+          </button>  */}
           
           <a 
   href="/contact" 
