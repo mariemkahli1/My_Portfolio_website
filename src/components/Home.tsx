@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Github, Twitter, Download, Mail } from 'lucide-react';
+import profil from '../assets/profil.jpg';
 
 const Home: React.FC = () => {
   const socialLinks = [
@@ -82,7 +83,7 @@ const Home: React.FC = () => {
               className="relative z-10 w-[90%] h-[98%] rounded-full overflow-hidden border-[6px] border-white dark:border-slate-800 shadow-2xl"
             >
               <img
-                src="dist\assets\SPORTY.png"
+                src={profil}
                 alt="mariel Portrait"
                 className="w-full h-full object-contain bg-slate-100"
                 referrerPolicy="no-referrer"
