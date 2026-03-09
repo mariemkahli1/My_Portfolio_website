@@ -1,13 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import auth from '../assets/Authentification.png';
+import commerce from '../assets/E-commerce.png';
+import library from '../assets/library.png';
+import sporty from '../assets/SPORTY.png';
 
 const Projects: React.FC = () => {
   const projects = [
      {
       title: 'Solution De Gestion et Analyse des Workflows Power Automate',
       description: 'An intelligent solution for managing and analyzing Power Automate workflows, integrating AI for automatic error detection and correction.',
-      image: 'src/assets/Authentification.png',
+      image: auth,
       tags: ['React', 'TypeScript', '.NET', 'SQL Server' , 'SSMS' , 'power automate', 'python'],
       github: 'https://github.com/mariemkahli1/Gestion_des_WKFs_power_automate_Backend',
 
@@ -16,7 +20,7 @@ const Projects: React.FC = () => {
     {
       title: 'After-Sales Service Management Web Application ',
       description: 'A web application designed to manage after-sales services.',
-      image: 'src/assets/E-commerce.png',
+      image: commerce,
       tags: ['Angular','.NET' ],
       github: 'https://github.com/mariemkahli1/ProjetSAV-.NET-Angular',
      
@@ -25,7 +29,7 @@ const Projects: React.FC = () => {
      {
       title: 'Dynamic Library Information System Website',
       description: 'A dynamic platform that allows efficient management of books and members.',
-      image: 'src/assets/library.png',
+      image: library,
       tags: ['Angular','Spring Boot'],
       github: 'https://github.com/mariemkahli1/Projet-Gestion-Laboratoire',
 
@@ -33,7 +37,7 @@ const Projects: React.FC = () => {
        {
       title: 'SPORTY Platform',
       description: 'A full-featured online store with payment integration and admin dashboard.',
-      image: '/src/assets/SPORTY.png',
+      image: sporty,
       tags: ['PHP', 'JAVASCRIPT', 'MYSQL '],
       github: 'https://github.com/mariemkahli1/SPORTYWEBSITE-with-PHP',
       
