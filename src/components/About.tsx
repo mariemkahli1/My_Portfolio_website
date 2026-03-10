@@ -1,88 +1,88 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../LanguageContext';
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('about');
 
   const tabs = [
-    { id: 'about', label: 'About Me' },
-    { id: 'education', label: 'Education' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'skills', label: 'Skills' },
-    
+    { id: 'about', label: t('about.tab_me') },
+    { id: 'education', label: t('about.tab_edu') },
+    { id: 'experience', label: t('about.tab_exp') },
+    { id: 'skills', label: t('about.tab_skills') },
   ];
 
   const aboutData = {
-    title: "About Me",
-    description: "Dynamic and social professional, excelling in collaborative environments and building strong connections to achieve shared goals.",
+    title: t('about.tab_me'),
+    description: t('about.description'),
     info: [
-      { label: "Full Name", value: "Mariem KAHLI" },
-      { label: "Gender", value: "Female" },
-      { label: "Age", value: "24 Years Old" },
-      { label: "Status", value: "Single" },
-      { label: "City", value: "Sfax" },
-      { label: "Nationality", value: "Tunisian" },
-      { label: "Experience", value: "1 Year" },
-      { label: "Full Time", value: "Available" },
-      { label: "Freelance", value: "Available" },
+      { label: t('about.full_name'), value: "Mariem KAHLI" },
+      { label: t('about.gender'), value: t('about.female') },
+      { label: t('about.age'), value: t('24') },
+      { label: t('about.status'), value: t('about.single') },
+      { label: t('about.city'), value: "Sfax" },
+      { label: t('about.nationality'), value: t('about.tunisian') },
+      { label: t('about.experience'), value: t('about.experience_val') },
+      { label: "Full Time", value: t('about.available') },
+      { label: "Freelance", value: t('about.available') },
       { label: "Phone", value: "(+216) 54 245 643" },
       { label: "Email", value: "kahli.mariem@enis.tn" },
-      { label: "Languages", value: "Arabic, French, English, German" },
+      { label: t('about.languages'), value: t('about.lang_list') },
     ]
   };
 
   const experienceData = {
-    title: "My Experience",
-    description: "I have worked with various technologies and companies to build scalable and efficient web applications.",
+    title: t('about.exp_title'),
+    description: t('about.exp_desc'),
     items: [
       { company: "PROGED Solutions", role: "SharePoint & Microsoft 365 Consultant | Full Stack Web Developer ", period: "06/2025 - Present" },
       { company: "PROGED Solutions", role: "Full Stack Web | Power Platform Developer Intern", period: "02/2025 - 05/2025" },
       { company: "PROGED Solutions", role: "Full Stack Web | Power Platform Developer Intern", period: "07/2024 - 08/2024" },
       { company: "Thales Group", role: "DevSecOps Intern", period: "06/2024 - 08/2024" },
       { company: "Mercarue", role: "Full Stack Web Intern", period: "06/2023 - 08/2023" },
-
     ]
   };
 
   const educationData = {
-    title: "My Education",
-    description: "My academic background has provided me with a strong foundation in computer science and software engineering.",
+    title: t('about.edu_title'),
+    description: t('about.edu_desc'),
     items: [
-      { school: "National Engineering School of Sfax (ENIS)", degree: "Computer Engineering and Applied Mathematics", period: "09/2022 - 06/2025" },
-      { school: "Preparatory Institute for Engineering Studies of Sfax (IPEIS)", degree: "Physics and Chemistry", period: "09/2020 - 06/2022" },
-      { school: "25 July 1957 High School", degree: "Baccalaureate in Experimental Sciences", period: "09/2019 - 06/2020" },
+      { school: t('education.school1'), degree: t('education.degree1'), period: "09/2022 - 06/2025" },
+      { school: t('education.school2'), degree: t('education.degree2'), period: "09/2020 - 06/2022" },
+      { school: t('education.school3'), degree: t('education.degree3'), period: "09/2019 - 06/2020" },
     ]
   };
 
-const skillsData = {
-    title: "My Skills",
-    description: "Specialized in full-stack development with React and .NET, I bridge the gap between custom web architectures and the Microsoft ecosystem. My technical versatility is further strengthened by a solid proficiency in Java, allowing me to create intelligent, automated, and high-performance solutions.",
+  const skillsData = {
+    title: t('about.skills_title'),
+    description: t('about.skills_desc'),
     categories: [
-  {
-    name: "Operating Systems",
-    skills: ["Windows", "Linux"]
-  },
-  {
-    name: "Programming Languages",
-    skills: ["C#", "Python", "TypeScript", "JavaScript", "PHP", "Java"]
-  },
-  {
-    name: "Microsoft Ecosystem & Power Platform", 
-    skills: ["Power Automate ", "Power Apps", "SharePoint Online", "Dynamics 365 Business Central", "Power BI", "Azure DevOps"]
-  },
-  {
-    name: "Frameworks & Web Tech",
-    skills: ["React", "Angular", "Vue.js", ".NET", "Spring Boot"]
-  },
-  {
-    name: "DevOps & Cloud Tools",
-    skills: ["Docker", "Jenkins", "SonarQube", "Git", "Jira", "Selenium", "Talend"]
-  },
-  {
-    name: "Databases",
-    skills: ["MySQL" , "SQL Server", "PostgreSQL" ]
-  }
-]
+      {
+        name: t('skills.cat.os'),
+        skills: ["Windows", "Linux"]
+      },
+      {
+        name: t('skills.cat.prog'),
+        skills: ["C#", "Python", "TypeScript", "JavaScript", "PHP", "Java"]
+      },
+      {
+        name: t('skills.cat.ms'),
+        skills: ["Power Automate ", "Power Apps", "SharePoint Online", "Dynamics 365 Business Central", "Power BI", "Azure DevOps"]
+      },
+      {
+        name: t('skills.cat.frameworks'),
+        skills: ["React", "Angular", "Vue.js", ".NET", "Spring Boot"]
+      },
+      {
+        name: t('skills.cat.devops'),
+        skills: ["Docker", "Jenkins", "SonarQube", "Git", "Jira", "Selenium", "Talend"]
+      },
+      {
+        name: t('skills.cat.db'),
+        skills: ["MySQL", "SQL Server", "PostgreSQL"]
+      }
+    ]
   };
 
   const renderContent = () => {
@@ -96,7 +96,7 @@ const skillsData = {
             className="flex flex-col gap-8"
           >
             <div className="flex flex-col gap-4">
-              <h3 className="text-4xl font-bold">About <span className="text-primary">Me</span></h3>
+              <h3 className="text-4xl font-bold">{t('about.tab_me').split(' ')[0]} <span className="text-primary">{t('about.tab_me').split(' ').slice(1).join(' ')}</span></h3>
               <p className="text-slate-600 dark:text-slate-400 max-w-[600px] leading-relaxed">
                 {aboutData.description}
               </p>
@@ -120,14 +120,14 @@ const skillsData = {
             className="flex flex-col gap-8"
           >
             <div className="flex flex-col gap-4">
-              <h3 className="text-4xl font-bold">My <span className="text-primary">Experience</span></h3>
+              <h3 className="text-4xl font-bold">{t('about.exp_title').split(' ')[0]} <span className="text-primary">{t('about.exp_title').split(' ').slice(1).join(' ')}</span></h3>
               <p className="text-slate-600 dark:text-slate-400 max-w-[600px]">
                 {experienceData.description}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {experienceData.items.map((item, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-black/5 dark:border-white/5 shadow-sm">
+                <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-black/5 dark:border-white/5 shadow-sm transition-colors duration-300">
                   <span className="text-primary text-sm">{item.period}</span>
                   <h4 className="text-xl font-bold mt-2">{item.role}</h4>
                   <p className="text-slate-600 dark:text-slate-400 text-sm">{item.company}</p>
@@ -145,14 +145,14 @@ const skillsData = {
             className="flex flex-col gap-8"
           >
             <div className="flex flex-col gap-4">
-              <h3 className="text-4xl font-bold">My <span className="text-primary">Education</span></h3>
+              <h3 className="text-4xl font-bold">{t('about.edu_title').split(' ')[0]} <span className="text-primary">{t('about.edu_title').split(' ').slice(1).join(' ')}</span></h3>
               <p className="text-slate-600 dark:text-slate-400 max-w-[600px]">
                 {educationData.description}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {educationData.items.map((item, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-black/5 dark:border-white/5 shadow-sm">
+                <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-black/5 dark:border-white/5 shadow-sm transition-colors duration-300">
                   <span className="text-primary text-sm">{item.period}</span>
                   <h4 className="text-xl font-bold mt-2">{item.degree}</h4>
                   <p className="text-slate-600 dark:text-slate-400 text-sm">{item.school}</p>
@@ -170,7 +170,7 @@ const skillsData = {
             className="flex flex-col gap-8"
           >
             <div className="flex flex-col gap-4">
-              <h3 className="text-4xl font-bold">My <span className="text-primary">Skills</span></h3>
+              <h3 className="text-4xl font-bold">{t('about.skills_title').split(' ')[0]} <span className="text-primary">{t('about.skills_title').split(' ').slice(1).join(' ')}</span></h3>
               <p className="text-slate-600 dark:text-slate-400 max-w-[600px]">
                 {skillsData.description}
               </p>
@@ -185,7 +185,7 @@ const skillsData = {
                     {category.skills.map((skill, index) => (
                       <div 
                         key={index} 
-                        className="bg-white dark:bg-slate-800 px-4 py-2 rounded-lg border border-black/5 dark:border-white/5 font-medium hover:text-primary transition-colors shadow-sm text-sm"
+                        className="bg-white dark:bg-slate-800 px-4 py-2 rounded-lg border border-black/5 dark:border-white/10 font-medium hover:text-primary transition-colors duration-300 shadow-sm text-sm"
                       >
                         {skill}
                       </div>
@@ -207,9 +207,9 @@ const skillsData = {
         {/* Left Side - Tabs */}
         <div className="flex flex-col gap-8 lg:w-[400px]">
           <div className="flex flex-col gap-4">
-            <h2 className="text-5xl font-bold">Why Hire Me?</h2>
+            <h2 className="text-5xl font-bold">{t('about.why')}</h2>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-             Transforming complex challenges into impactful, user-focused digital solutions through code and smart automation.
+              {t('about.why_desc')}
             </p>
           </div>
           

@@ -1,17 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, Languages } from 'lucide-react';
 import { useTheme } from '../ThemeContext';
+import { useLanguage } from '../LanguageContext';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = React.useState(false);
+  const location = useLocation();
 
   const navLinks = [
-       { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.projects'), href: '/projects' },
+    { name: t('nav.contact'), href: '/contact' },
   ];
 
   return (
@@ -24,31 +28,35 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              to={link.href}
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                location.pathname === link.href ? 'text-primary' : ''
+              }`}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="flex items-center space-x-4">
-          {/* <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-            aria-label="Toggle Theme"
+          <button
+            onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+            className="flex items-center space-x-1 px-3 py-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-sm font-bold uppercase"
+            aria-label="Toggle Language"
           >
-            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-          </button>  */}
+            <Languages size={18} className="text-primary" />
+            <span>{language}</span>
+          </button>
+
           
-          <a 
-  href="/contact" 
-  className="hidden md:block px-6 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-primary/20 text-center"
->
-  Hire Me
-</a>
+          <Link 
+            to="/contact" 
+            className="hidden md:block px-6 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-primary/20 text-center"
+          >
+            {t('nav.hire')}
+          </Link>
 
           <button 
             className="md:hidden p-2"
@@ -68,18 +76,24 @@ const Navbar: React.FC = () => {
         >
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                className="text-lg font-medium py-2 border-b border-black/5 dark:border-white/5"
+                to={link.href}
+                className={`text-lg font-medium py-2 border-b border-black/5 dark:border-white/5 ${
+                  location.pathname === link.href ? 'text-primary' : ''
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <button className="w-full py-3 bg-primary text-white rounded-xl font-semibold">
-              Hire Me
-            </button>
+            <Link 
+              to="/contact"
+              className="w-full py-3 bg-primary text-white rounded-xl font-semibold text-center"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('nav.hire')}
+            </Link>
           </div>
         </motion.div>
       )}

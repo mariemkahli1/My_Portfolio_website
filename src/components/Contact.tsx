@@ -2,8 +2,10 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { useLanguage } from '../LanguageContext';
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -14,7 +16,6 @@ const Contact: React.FC = () => {
     setStatus('submitting');
 
     try {
-      // Utilisation d'EmailJS avec vos nouveaux identifiants
       const result = await emailjs.sendForm(
         'service_q6cxd89', 
         'template_irv7w7n', 
@@ -35,12 +36,12 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-slate-900/50">
+    <section id="contact" className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-slate-900/50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Get In <span className="text-primary">Touch</span></h2>
+          <h2 className="text-4xl font-bold mb-4">{t('contact.title')} <span className="text-primary">{t('contact.subtitle')}</span></h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Let's connect to turn your business needs into powerful digital solutions. Together, we can bring your ideas to life through innovative development and smart automation.
+            {t('contact.description')}
           </p>
         </div>
 
@@ -88,19 +89,19 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
           >
             {status === 'success' ? (
-              <div className="bg-white dark:bg-slate-800 p-12 rounded-3xl border border-primary/20 flex flex-col items-center text-center space-y-4 shadow-xl">
+              <div className="bg-white dark:bg-slate-800 p-12 rounded-3xl border border-primary/20 flex flex-col items-center text-center space-y-4 shadow-xl transition-colors duration-300">
                 <div className="p-4 bg-primary/20 text-primary rounded-full">
                   <CheckCircle size={48} />
                 </div>
-                <h3 className="text-2xl font-bold">Message Sent!</h3>
+                <h3 className="text-2xl font-bold">{t('contact.success')}</h3>
                 <p className="text-slate-600 dark:text-slate-400">
-                  Thank you for reaching out. I'll get back to you as soon as possible.
+                  {t('language') === 'fr' ? "Merci de m'avoir contactée. Je vous répondrai dès que possible." : "Thank you for reaching out. I'll get back to you as soon as possible."}
                 </p>
                 <button 
                   onClick={() => setStatus('idle')}
                   className="text-primary font-bold hover:underline"
                 >
-                  Send another message
+                  {t('language') === 'fr' ? 'Envoyer un autre message' : 'Send another message'}
                 </button>
               </div>
             ) : (
@@ -110,35 +111,35 @@ const Contact: React.FC = () => {
                     name="name"
                     type="text"
                     required
-                    placeholder="Full Name"
-                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all"
+                    placeholder={t('contact.name')}
+                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all duration-300"
                   />
                   <input
                     name="email"
                     type="email"
                     required
-                    placeholder="Email Address"
-                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all"
+                    placeholder={t('contact.email')}
+                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all duration-300"
                   />
                 </div>
                 <input
                   name="title"
                   type="text"
                   required
-                  placeholder="Subject"
-                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all"
+                  placeholder={t('language') === 'fr' ? 'Sujet' : 'Subject'}
+                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all duration-300"
                 />
                 <textarea
                   name="message"
                   required
-                  placeholder="Your Message"
+                  placeholder={t('contact.message')}
                   rows={6}
-                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all resize-none"
+                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all duration-300 resize-none"
                 ></textarea>
                 
                 {status === 'error' && (
                   <p className="text-red-500 text-sm font-medium">
-                    Something went wrong. Please try again or email me directly.
+                    {t('contact.error')}
                   </p>
                 )}
 
@@ -147,7 +148,7 @@ const Contact: React.FC = () => {
                   disabled={status === 'submitting'}
                   className="w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all shadow-lg shadow-primary/20 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>{status === 'submitting' ? 'Sending...' : 'Send Message'}</span>
+                  <span>{status === 'submitting' ? t('contact.sending') : t('contact.send')}</span>
                   <Send size={20} />
                 </button>
               </form>

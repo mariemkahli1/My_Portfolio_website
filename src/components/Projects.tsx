@@ -1,46 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
-import auth from '../assets/Authentification.png';
-import commerce from '../assets/E-commerce.png';
-import library from '../assets/library.png';
-import sporty from '../assets/SPORTY.png';
+import { Github } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
 const Projects: React.FC = () => {
+  const { t } = useLanguage();
+  const auth = "/src/assets/Authentification.png";
+  const commerce = "/src/assets/E-commerce.png";
+  const library = "/src/assets/library.png";
+  const sporty = "/src/assets/SPORTY.png";
+
   const projects = [
-     {
-      title: 'Solution De Gestion et Analyse des Workflows Power Automate',
-      description: 'An intelligent solution for managing and analyzing Power Automate workflows, integrating AI for automatic error detection and correction.',
-      image: auth,
-      tags: ['React', 'TypeScript', '.NET', 'SQL Server' , 'SSMS' , 'power automate', 'python'],
-      github: 'https://github.com/mariemkahli1/Gestion_des_WKFs_power_automate_Backend',
-
-    },
- 
     {
-      title: 'After-Sales Service Management Web Application ',
-      description: 'A web application designed to manage after-sales services.',
+      title: t('projects.p1.title'),
+      description: t('projects.p1.desc'),
+      image: auth,
+      tags: ['React', 'TypeScript', '.NET', 'SQL Server', 'SSMS', 'power automate', 'python'],
+      github: 'https://github.com/mariemkahli1/Gestion_des_WKFs_power_automate_Backend',
+    },
+    {
+      title: t('projects.p2.title'),
+      description: t('projects.p2.desc'),
       image: commerce,
-      tags: ['Angular','.NET' ],
+      tags: ['Angular', '.NET'],
       github: 'https://github.com/mariemkahli1/ProjetSAV-.NET-Angular',
-     
     },
-   
-     {
-      title: 'Dynamic Library Information System Website',
-      description: 'A dynamic platform that allows efficient management of books and members.',
+    {
+      title: t('projects.p3.title'),
+      description: t('projects.p3.desc'),
       image: library,
-      tags: ['Angular','Spring Boot'],
+      tags: ['Angular', 'Spring Boot'],
       github: 'https://github.com/mariemkahli1/Projet-Gestion-Laboratoire',
-
     },
-       {
-      title: 'SPORTY Platform',
-      description: 'A full-featured online store with payment integration and admin dashboard.',
+    {
+      title: t('projects.p4.title'),
+      description: t('projects.p4.desc'),
       image: sporty,
       tags: ['PHP', 'JAVASCRIPT', 'MYSQL '],
       github: 'https://github.com/mariemkahli1/SPORTYWEBSITE-with-PHP',
-      
     },
   ];
 
@@ -48,9 +45,9 @@ const Projects: React.FC = () => {
     <section id="projects" className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Featured <span className="text-primary">Projects</span></h2>
+          <h2 className="text-4xl font-bold mb-4">{t('projects.title')} <span className="text-primary">{t('projects.subtitle')}</span></h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            A selection of my recent work, showcasing my skills in development and design.
+            {t('projects.description')}
           </p>
         </div>
 
@@ -72,10 +69,9 @@ const Projects: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
-                  <a href={project.github} className="p-3 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors">
                     <Github size={20} />
                   </a>
-                
                 </div>
               </div>
               

@@ -1,16 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Github, Twitter, Download, Mail } from 'lucide-react';
-import profil from '../assets/Mariem2.jpg';
+import { Linkedin, Github, Twitter, Download } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
-const Home: React.FC = () => {
+const Hero: React.FC = () => {
+  const { t } = useLanguage();
+  const profil = "/src/assets/Mariem2.jpg";
   const socialLinks = [
-  { Icon: Github, href: "https://github.com/mariemkahli1" },
-  { Icon: Linkedin, href: "https://www.linkedin.com/in/mariem-kahli/" },
-  { Icon: Twitter, href: "https://x.com/KahliMarie3354" },
-];
+    { Icon: Github, href: "https://github.com/mariemkahli1" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/in/mariem-kahli/" },
+    { Icon: Twitter, href: "https://x.com/KahliMarie3354" },
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden transition-colors duration-300">
       {/* Background Blobs */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl -z-10" />
@@ -21,45 +24,34 @@ const Home: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-      
-
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Hi, I'm <span className="text-primary">Mariem KAHLI</span>
+            {t('hero.title')} <span className="text-primary">Mariem KAHLI</span>
           </h1>
           
-           <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed text-justify">
-            Web Development Engineer, passionate and detail-oriented, with a solid command of software development technologies. 
-            Driven by curiosity and a strong sense of challenge, I strive to design innovative, high-performance solutions tailored to user needs.
+          <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed text-justify">
+            {t('hero.description')}
           </p>
 
-      <div className="flex flex-wrap items-center gap-6">
-         
-            {/* <a 
-  href="\Mariem_Kahli_CV.pdf" 
-  download="Mariem_Kahli_CV.pdf" 
-  className="flex items-center space-x-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all shadow-lg shadow-primary/20"
->
-  <Download size={20} />
-  <span>Download CV</span>
-</a> */}
-<a 
-  href="/Mariem_Kahli_CV.pdf"  /* Chemin correct vers le dossier public */
-  download="Mariem_Kahli_CV.pdf" 
-  className="flex items-center space-x-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all shadow-lg shadow-primary/20"
->
-  <Download size={20} />
-  <span>Download CV</span>
-</a>
+          <div className="flex flex-wrap items-center gap-6">
+            <a 
+              href={t('hero.cv_file')} 
+              download={t('hero.cv_file').split('/').pop()} 
+              className="flex items-center space-x-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all shadow-lg shadow-primary/20"
+            >
+              <Download size={20} />
+              <span>{t('hero.download')}</span>
+            </a>
             
             <div className="flex space-x-4">
                {socialLinks.map(({ Icon, href }, i) => (
                 <motion.a
                   key={i}
-                   href={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
-                 className="p-3 bg-white text-slate-600 border-slate-200 shadow-sm dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700  rounded-2xl border hover:text-primary dark:hover:text-primary hover:border-primary transition-all"
+                  className="p-3 bg-white text-slate-600 border-slate-200 shadow-sm dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700 rounded-2xl border hover:text-primary dark:hover:text-primary hover:border-primary transition-all duration-300"
                 >
-
                   <Icon size={20} />
                 </motion.a>
               ))}
@@ -88,21 +80,21 @@ const Home: React.FC = () => {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-[90%] h-[98%] rounded-full overflow-hidden border-[6px] border-white dark:border-slate-800 shadow-2xl"
+              className="relative z-10 w-[90%] h-[98%] rounded-full overflow-hidden border-[6px] border-white dark:border-slate-800 shadow-2xl transition-colors duration-300"
             >
               <img
                 src={profil}
-                alt="mariel Portrait"
-                className="w-full h-full object-contain bg-slate-100"
+                alt="Mariem KAHLI Portrait"
+                className="w-full h-full object-cover bg-slate-100"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
             
-            {/* Floating Tech Badges - Matching Screenshot Style */}
+          {/* Floating Tech Badges */}
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-4 -right-2 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20"
+              className="absolute top-4 -right-2 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20 transition-colors duration-300"
             >
               <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-inner">Ai</div>
             </motion.div>
@@ -110,17 +102,41 @@ const Home: React.FC = () => {
             <motion.div 
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-[60%] -left-10 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20"
+              className="absolute top-10 -left-10 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20 transition-colors duration-300"
             >
-              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-inner">Js</div>
+              <div className="px-3 h-10 bg-blue-500 rounded-xl flex items-center justify-center text-white text-xs font-bold shadow-inner">ReactJs</div>
             </motion.div>
 
             <motion.div 
               animate={{ x: [0, 10, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-6 right-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20"
+              className="absolute bottom-6 right-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20 transition-colors duration-300"
             >
-              <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-inner">Ts</div>
+              <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-inner">C#</div>
+            </motion.div>
+
+            <motion.div 
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute bottom-4 -left-12 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20 transition-colors duration-300"
+            >
+              <div className="px-3 h-10 bg-teal-600 rounded-xl flex items-center justify-center text-white text-[10px] font-bold shadow-inner whitespace-nowrap">Office 365</div>
+            </motion.div>
+
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-1/2 -left-14 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20 transition-colors duration-300"
+            >
+              <div className="px-3 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-[10px] font-bold shadow-inner whitespace-nowrap">Java</div>
+            </motion.div>
+
+            <motion.div 
+              animate={{ x: [0, -10, 0] }}
+              transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-1/2 -right-14 -translate-y-1/2 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20 transition-colors duration-300"
+            >
+              <div className="px-3 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-[10px] font-bold shadow-inner whitespace-nowrap">Power automate</div>
             </motion.div>
           </div>
         </motion.div>
@@ -129,4 +145,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Hero;

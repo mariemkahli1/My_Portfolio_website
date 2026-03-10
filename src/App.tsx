@@ -6,10 +6,12 @@ import Hero from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import { LanguageProvider } from './LanguageContext';
 
 export default function App() {
   return (
     <ThemeProvider>
+      <LanguageProvider>
       <Router>
         <div className="min-h-screen selection:bg-primary/30 flex flex-col">
           <Navbar />
@@ -23,6 +25,9 @@ export default function App() {
           </main>
         </div>
       </Router>
+   </LanguageProvider>
     </ThemeProvider>
   );
 }
+
+
