@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Github, Twitter, Download } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
-
+import profil from '../assets/Mariem2.jpg';
 const Hero: React.FC = () => {
   const { t } = useLanguage();
-  const profil = "/src/assets/Mariem2.jpg";
+ 
   const socialLinks = [
     { Icon: Github, href: "https://github.com/mariemkahli1" },
     { Icon: Linkedin, href: "https://www.linkedin.com/in/mariem-kahli/" },
