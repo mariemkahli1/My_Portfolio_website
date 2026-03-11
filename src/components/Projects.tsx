@@ -2,13 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
-
+ import auth from '../assets/Authentification.png';
+  import commerce from '../assets/E-commerce.png';
+  import library from '../assets/library.png';
+  import  sporty from '../assets/SPORTY.png';
 const Projects: React.FC = () => {
   const { t } = useLanguage();
-  const auth = "../assets/Authentification.png";
-  const commerce = "../assets/E-commerce.png";
-  const library = "../assets/library.png";
-  const sporty = "../assets/SPORTY.png";
+ 
 
   const projects = [
     {
