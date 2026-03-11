@@ -204,7 +204,6 @@ const About: React.FC = () => {
   return (
     <section id="about" className="min-h-screen pt-32 pb-24 bg-slate-900/50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">
-        {/* Left Side - Tabs */}
         <div className="flex flex-col gap-8 lg:w-[400px]">
           <div className="flex flex-col gap-4">
             <h2 className="text-5xl font-bold">{t('about.why')}</h2>
