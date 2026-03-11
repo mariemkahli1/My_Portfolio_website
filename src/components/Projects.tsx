@@ -2,12 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
-import auth from '../assets/Authentification.png';
-import commerce from '../assets/E-commerce.png';
-import library from '../assets/library.png';
-import sporty from '../assets/SPORTY.png';
+
 const Projects: React.FC = () => {
   const { t } = useLanguage();
+  const auth = "/src/assets/Authentification.png";
+  const commerce = "/src/assets/E-commerce.png";
+  const library = "/src/assets/library.png";
+  const sporty = "/src/assets/SPORTY.png";
+
   const projects = [
     {
       title: t('projects.p1.title'),
@@ -40,11 +42,11 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+    <section id="projects" className="min-h-screen pt-32 pb-24 bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">{t('projects.title')} <span className="text-primary">{t('projects.subtitle')}</span></h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto">
             {t('projects.description')}
           </p>
         </div>
@@ -57,7 +59,7 @@ const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg border border-black/5 dark:border-white/10 hover:shadow-2xl transition-all duration-300"
+              className="group bg-slate-800 rounded-3xl overflow-hidden shadow-lg border border-white/10 hover:shadow-2xl transition-all duration-300"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -75,7 +77,7 @@ const Projects: React.FC = () => {
               
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
+                <p className="text-sm text-slate-400 mb-4 line-clamp-2">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">

@@ -97,7 +97,7 @@ const About: React.FC = () => {
           >
             <div className="flex flex-col gap-4">
               <h3 className="text-4xl font-bold">{t('about.tab_me').split(' ')[0]} <span className="text-primary">{t('about.tab_me').split(' ').slice(1).join(' ')}</span></h3>
-              <p className="text-slate-600 dark:text-slate-400 max-w-[600px] leading-relaxed">
+              <p className="text-slate-400 max-w-[600px] leading-relaxed">
                 {aboutData.description}
               </p>
             </div>
@@ -121,16 +121,16 @@ const About: React.FC = () => {
           >
             <div className="flex flex-col gap-4">
               <h3 className="text-4xl font-bold">{t('about.exp_title').split(' ')[0]} <span className="text-primary">{t('about.exp_title').split(' ').slice(1).join(' ')}</span></h3>
-              <p className="text-slate-600 dark:text-slate-400 max-w-[600px]">
+              <p className="text-slate-400 max-w-[600px]">
                 {experienceData.description}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {experienceData.items.map((item, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-black/5 dark:border-white/5 shadow-sm transition-colors duration-300">
+                <div key={index} className="bg-slate-800 p-6 rounded-xl border border-white/5 shadow-sm transition-colors duration-300">
                   <span className="text-primary text-sm">{item.period}</span>
                   <h4 className="text-xl font-bold mt-2">{item.role}</h4>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">{item.company}</p>
+                  <p className="text-slate-400 text-sm">{item.company}</p>
                 </div>
               ))}
             </div>
@@ -146,16 +146,16 @@ const About: React.FC = () => {
           >
             <div className="flex flex-col gap-4">
               <h3 className="text-4xl font-bold">{t('about.edu_title').split(' ')[0]} <span className="text-primary">{t('about.edu_title').split(' ').slice(1).join(' ')}</span></h3>
-              <p className="text-slate-600 dark:text-slate-400 max-w-[600px]">
+              <p className="text-slate-400 max-w-[600px]">
                 {educationData.description}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {educationData.items.map((item, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-black/5 dark:border-white/5 shadow-sm transition-colors duration-300">
+                <div key={index} className="bg-slate-800 p-6 rounded-xl border border-white/5 shadow-sm transition-colors duration-300">
                   <span className="text-primary text-sm">{item.period}</span>
                   <h4 className="text-xl font-bold mt-2">{item.degree}</h4>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">{item.school}</p>
+                  <p className="text-slate-400 text-sm">{item.school}</p>
                 </div>
               ))}
             </div>
@@ -171,7 +171,7 @@ const About: React.FC = () => {
           >
             <div className="flex flex-col gap-4">
               <h3 className="text-4xl font-bold">{t('about.skills_title').split(' ')[0]} <span className="text-primary">{t('about.skills_title').split(' ').slice(1).join(' ')}</span></h3>
-              <p className="text-slate-600 dark:text-slate-400 max-w-[600px]">
+              <p className="text-slate-400 max-w-[600px]">
                 {skillsData.description}
               </p>
             </div>
@@ -185,7 +185,7 @@ const About: React.FC = () => {
                     {category.skills.map((skill, index) => (
                       <div 
                         key={index} 
-                        className="bg-white dark:bg-slate-800 px-4 py-2 rounded-lg border border-black/5 dark:border-white/10 font-medium hover:text-primary transition-colors duration-300 shadow-sm text-sm"
+                        className="bg-slate-800 px-4 py-2 rounded-lg border border-white/10 font-medium hover:text-primary transition-colors duration-300 shadow-sm text-sm"
                       >
                         {skill}
                       </div>
@@ -202,13 +202,13 @@ const About: React.FC = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-slate-900/50 transition-colors duration-300">
+    <section id="about" className="min-h-screen pt-32 pb-24 bg-slate-900/50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">
         {/* Left Side - Tabs */}
         <div className="flex flex-col gap-8 lg:w-[400px]">
           <div className="flex flex-col gap-4">
             <h2 className="text-5xl font-bold">{t('about.why')}</h2>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="text-slate-400 leading-relaxed">
               {t('about.why_desc')}
             </p>
           </div>
@@ -220,8 +220,8 @@ const About: React.FC = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`w-full py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 text-center shadow-sm
                   ${activeTab === tab.id 
-                    ? 'bg-white dark:bg-slate-800 text-primary border-2 border-primary' 
-                    : 'bg-white dark:bg-slate-800 border-2 border-transparent hover:border-primary/20'
+                    ? 'bg-slate-800 text-primary border-2 border-primary' 
+                    : 'bg-slate-800 border-2 border-transparent hover:border-primary/20'
                   }`}
               >
                 {tab.label}

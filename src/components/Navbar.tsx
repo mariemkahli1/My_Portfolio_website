@@ -1,12 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Moon, Sun, Menu, X, Languages } from 'lucide-react';
-import { useTheme } from '../ThemeContext';
+import { Menu, X, Languages } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
@@ -20,7 +18,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-full px-8 py-3 border border-white/20 shadow-lg">
+      <div className="max-w-7xl mx-auto flex items-center justify-between bg-black/20 backdrop-blur-md rounded-full px-8 py-3 border border-white/20 shadow-lg">
         <div className="text-2xl font-bold font-display tracking-tighter">
           Mariem<span className="text-primary">.</span>
         </div>
@@ -43,13 +41,12 @@ const Navbar: React.FC = () => {
         <div className="flex items-center space-x-4">
           <button
             onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
-            className="flex items-center space-x-1 px-3 py-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-sm font-bold uppercase"
+            className="flex items-center space-x-1 px-3 py-1.5 rounded-full hover:bg-white/10 transition-colors text-sm font-bold uppercase"
             aria-label="Toggle Language"
           >
             <Languages size={18} className="text-primary" />
             <span>{language}</span>
           </button>
-
           
           <Link 
             to="/contact" 
@@ -72,14 +69,14 @@ const Navbar: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-24 left-6 right-6 bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-2xl border border-black/5 dark:border-white/10"
+          className="md:hidden absolute top-24 left-6 right-6 bg-slate-900 rounded-3xl p-6 shadow-2xl border border-white/10"
         >
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-lg font-medium py-2 border-b border-black/5 dark:border-white/5 ${
+                className={`text-lg font-medium py-2 border-b border-white/5 ${
                   location.pathname === link.href ? 'text-primary' : ''
                 }`}
                 onClick={() => setIsOpen(false)}

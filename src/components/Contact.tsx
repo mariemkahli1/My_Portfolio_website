@@ -36,11 +36,11 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-slate-900/50 transition-colors duration-300">
+    <section id="contact" className="min-h-screen pt-32 pb-24 bg-slate-900/50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">{t('contact.title')} <span className="text-primary">{t('contact.subtitle')}</span></h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto">
             {t('contact.description')}
           </p>
         </div>
@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-1">Email</h3>
-                <p className="text-slate-600 dark:text-slate-400">kahli.mariem@enis.tn</p>
+                <p className="text-slate-400">kahli.mariem@enis.tn</p>
               </div>
             </div>
 
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-1">Phone</h3>
-                <p className="text-slate-600 dark:text-slate-400">+216 54 245 643</p>
+                <p className="text-slate-400">+216 54 245 643</p>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-1">Location</h3>
-                <p className="text-slate-600 dark:text-slate-400">Tunis Street km 4, Sfax, Tunisia</p>
+                <p className="text-slate-400">Tunis Street km 4, Sfax, Tunisia</p>
               </div>
             </div>
           </motion.div>
@@ -89,12 +89,12 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
           >
             {status === 'success' ? (
-              <div className="bg-white dark:bg-slate-800 p-12 rounded-3xl border border-primary/20 flex flex-col items-center text-center space-y-4 shadow-xl transition-colors duration-300">
+              <div className="bg-slate-800 p-12 rounded-3xl border border-primary/20 flex flex-col items-center text-center space-y-4 shadow-xl transition-colors duration-300">
                 <div className="p-4 bg-primary/20 text-primary rounded-full">
                   <CheckCircle size={48} />
                 </div>
                 <h3 className="text-2xl font-bold">{t('contact.success')}</h3>
-                <p className="text-slate-600 dark:text-slate-400">
+                <p className="text-slate-400">
                   {t('language') === 'fr' ? "Merci de m'avoir contactée. Je vous répondrai dès que possible." : "Thank you for reaching out. I'll get back to you as soon as possible."}
                 </p>
                 <button 
@@ -112,14 +112,14 @@ const Contact: React.FC = () => {
                     type="text"
                     required
                     placeholder={t('contact.name')}
-                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all duration-300"
+                    className="w-full px-6 py-4 bg-slate-800 rounded-2xl border border-white/10 focus:border-primary outline-none transition-all duration-300"
                   />
                   <input
                     name="email"
                     type="email"
                     required
                     placeholder={t('contact.email')}
-                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all duration-300"
+                    className="w-full px-6 py-4 bg-slate-800 rounded-2xl border border-white/10 focus:border-primary outline-none transition-all duration-300"
                   />
                 </div>
                 <input
@@ -127,14 +127,14 @@ const Contact: React.FC = () => {
                   type="text"
                   required
                   placeholder={t('language') === 'fr' ? 'Sujet' : 'Subject'}
-                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all duration-300"
+                  className="w-full px-6 py-4 bg-slate-800 rounded-2xl border border-white/10 focus:border-primary outline-none transition-all duration-300"
                 />
                 <textarea
                   name="message"
                   required
                   placeholder={t('contact.message')}
                   rows={6}
-                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 rounded-2xl border border-black/5 dark:border-white/10 focus:border-primary outline-none transition-all duration-300 resize-none"
+                  className="w-full px-6 py-4 bg-slate-800 rounded-2xl border border-white/10 focus:border-primary outline-none transition-all duration-300 resize-none"
                 ></textarea>
                 
                 {status === 'error' && (
