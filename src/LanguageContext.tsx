@@ -79,6 +79,10 @@ const translations = {
     'contact.sending': 'Sending...',
     'contact.success': 'Message Sent!',
     'contact.error': 'Something went wrong. Please try again.',
+    'contact.phone' : 'Phone',
+    'contact.location' : 'Location',
+    'contact.adresse' : 'Tunis Street km 4, Sfax, Tunisia',
+    
   },
   fr: {
     'nav.home': 'Accueil',
@@ -150,6 +154,10 @@ const translations = {
     'contact.sending': 'Envoi en cours...',
     'contact.success': 'Message Envoyé !',
     'contact.error': 'Une erreur est survenue. Veuillez réessayer.',
+    'contact.phone' : 'Téléphone',
+    'contact.location' : 'Localisation',
+    'contact.adresse' : 'Route tunis km 4, Sfax, Tunis',
+    
   }
 };
 

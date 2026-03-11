@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
                 <Mail size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-1">Email</h3>
+                <h3 className="text-xl font-bold mb-1">{t('contact.email')}</h3>
                 <p className="text-slate-400">kahli.mariem@enis.tn</p>
               </div>
             </div>
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
                 <Phone size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-1">Phone</h3>
+                <h3 className="text-xl font-bold mb-1">{t('contact.phone')}</h3>
                 <p className="text-slate-400">+216 54 245 643</p>
               </div>
             </div>
@@ -77,8 +77,8 @@ const Contact: React.FC = () => {
                 <MapPin size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-1">Location</h3>
-                <p className="text-slate-400">Tunis Street km 4, Sfax, Tunisia</p>
+                <h3 className="text-xl font-bold mb-1">{t('contact.location')}</h3>
+                <p className="text-slate-400">{t('contact.adresse')}</p>
               </div>
             </div>
           </motion.div>
