@@ -5,10 +5,10 @@ import { useLanguage } from '../LanguageContext';
 
 const Projects: React.FC = () => {
   const { t } = useLanguage();
-  const auth = "/src/assets/Authentification.png";
-  const commerce = "/src/assets/E-commerce.png";
-  const library = "/src/assets/library.png";
-  const sporty = "/src/assets/SPORTY.png";
+  const auth = "../assets/Authentification.png";
+  const commerce = "../assets/E-commerce.png";
+  const library = "../assets/library.png";
+  const sporty = "../assets/SPORTY.png";
 
   const projects = [
     {
