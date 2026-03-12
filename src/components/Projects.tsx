@@ -6,6 +6,7 @@ import { useLanguage } from '../LanguageContext';
   import commerce from '../assets/E-commerce.png';
   import library from '../assets/library.png';
   import  sporty from '../assets/SPORTY.png';
+  import vehicule from '../assets/vehicule-detection.png'
 const Projects: React.FC = () => {
   const { t } = useLanguage();
  
@@ -22,14 +23,14 @@ const Projects: React.FC = () => {
       title: t('projects.p2.title'),
       description: t('projects.p2.desc'),
       image: commerce,
-      tags: ['Angular', '.NET'],
+      tags: ['React', '.NET'],
       github: 'https://github.com/mariemkahli1/ProjetSAV-.NET-Angular',
     },
     {
       title: t('projects.p3.title'),
       description: t('projects.p3.desc'),
       image: library,
-      tags: ['Angular', 'Spring Boot'],
+      tags: ['React', 'Spring Boot'],
       github: 'https://github.com/mariemkahli1/Projet-Gestion-Laboratoire',
     },
     {
@@ -38,6 +39,12 @@ const Projects: React.FC = () => {
       image: sporty,
       tags: ['PHP', 'JAVASCRIPT', 'MYSQL '],
       github: 'https://github.com/mariemkahli1/SPORTYWEBSITE-with-PHP',
+    },  {
+      title: t('projects.p5.title'),
+      description: t('projects.p4.desc'),
+      image: vehicule,
+      tags: ['Python', 'Flask' , 'Roboflow'],
+      github: '#',
     },
   ];
 
