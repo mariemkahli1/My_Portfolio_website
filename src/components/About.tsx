@@ -36,7 +36,7 @@ const About: React.FC = () => {
     title: t('about.exp_title'),
     description: t('about.exp_desc'),
     items: [
-      { company: "PROGED Solutions", role: "SharePoint & Microsoft 365 Consultant | Full Stack Web Developer ", period: "06/2025 - Present" },
+      { company: "PROGED Solutions", role: "Full Stack Web Developer | SharePoint & Microsoft 365 Consultant ", period: "06/2025 - 04/2026" },
       { company: "PROGED Solutions", role: "Full Stack Web | Power Platform Developer Intern", period: "02/2025 - 05/2025" },
       { company: "PROGED Solutions", role: "Full Stack Web | Power Platform Developer Intern", period: "07/2024 - 08/2024" },
       { company: "Thales Group", role: "DevSecOps Intern", period: "06/2024 - 08/2024" },
