@@ -23,14 +23,14 @@ const Projects: React.FC = () => {
       title: t('projects.p2.title'),
       description: t('projects.p2.desc'),
       image: commerce,
-      tags: ['React', '.NET'],
+      tags: ['Angular', 'Java','SpringBoot'],
       github: 'https://github.com/mariemkahli1/ProjetSAV-.NET-Angular',
     },
     {
       title: t('projects.p3.title'),
       description: t('projects.p3.desc'),
       image: library,
-      tags: ['React', 'Spring Boot'],
+      tags: ['Angular', 'Spring Boot'],
       github: 'https://github.com/mariemkahli1/Projet-Gestion-Laboratoire',
     },
     {
