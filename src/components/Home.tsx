@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
               className="absolute top-1/2 -right-14 -translate-y-1/2 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 z-20 transition-colors duration-300"
             >
-              <div className="px-3 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-[10px] font-bold shadow-inner whitespace-nowrap">Power automate</div>
+              <div className="px-3 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-[10px] font-bold shadow-inner whitespace-nowrap">SpringBoot</div>
             </motion.div>
           </div>
         </motion.div>
